@@ -1,9 +1,12 @@
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -15,7 +18,13 @@ import { from } from 'rxjs';
     MenuComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule, FlexLayoutModule, MatListModule
+    BrowserModule,
+    MatToolbarModule,
+    FlexLayoutModule, 
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
