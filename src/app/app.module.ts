@@ -1,3 +1,4 @@
+import { DishService } from './services/dish.service';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +29,9 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MatGridListModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [
+    DishService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
