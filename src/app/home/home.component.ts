@@ -7,12 +7,21 @@ import { LeaderService } from './../services/leader.service';
 import { Dish } from '../shared/dish';
 import { Promotion } from '../shared/promotion';
 import { Leader } from '../shared/leader';
+import { flyInOut, expand } from '../animations/app.animations';
 // import { baseURL } from './../shared/baseurl';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
+    animations: [
+      flyInOut(),
+      expand()
+    ]
 })
 export class HomeComponent implements OnInit {
 
