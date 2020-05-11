@@ -8,6 +8,8 @@ import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,7 +19,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSliderModule} from '@angular/material/slider'
+import { MatSliderModule } from '@angular/material/slider'
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -32,8 +35,7 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
-
-import 'hammerjs';
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import 'hammerjs';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
+    HttpClientModule,
     MatToolbarModule,
     FlexLayoutModule,
     FormsModule,
@@ -71,7 +75,8 @@ import 'hammerjs';
   providers: [
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
     LoginComponent
