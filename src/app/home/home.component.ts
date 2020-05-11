@@ -17,6 +17,7 @@ import { baseURL } from './../shared/baseurl';
 export class HomeComponent implements OnInit {
 
   dish: Dish;
+  dishErrMsg: string;
   promotion: Promotion;
   leader: Leader;
 
@@ -27,7 +28,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dishservice.getFeaturedDish()
-      .subscribe(dish => this.dish = dish);
+      .subscribe(dish => this.dish = dish,
+        errMsg => this.dishErrMsg = errMsg);
     this.promotionservice.getFeaturedPromotion()
       .subscribe(promotion => this.promotion = promotion)
     this.leaderservice.getFeaturedLeader()

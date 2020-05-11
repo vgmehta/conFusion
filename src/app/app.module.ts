@@ -35,6 +35,7 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHttpService } from './services/process-http.service';
 import { baseURL } from './shared/baseurl';
 
 @NgModule({
@@ -76,6 +77,7 @@ import { baseURL } from './shared/baseurl';
     DishService,
     PromotionService,
     LeaderService,
+    ProcessHttpService,
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
