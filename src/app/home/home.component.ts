@@ -7,7 +7,7 @@ import { LeaderService } from './../services/leader.service';
 import { Dish } from '../shared/dish';
 import { Promotion } from '../shared/promotion';
 import { Leader } from '../shared/leader';
-import { baseURL } from './../shared/baseurl';
+// import { baseURL } from './../shared/baseurl';
 
 @Component({
   selector: 'app-home',
